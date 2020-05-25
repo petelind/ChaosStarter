@@ -3,10 +3,10 @@
 ###### How do I prep my environment?
 1. Install python 3.X if you dont already have it.
 2. Create a virtual environment: 
-python3 -m venv ~/.venvs/chaostk
+`python3 -m venv ~/.venvs/chaostk`
 `source ~/.venvs/chaostk/activate`
 3. Install Chaos Toolkit:
-`pip install chaostoolit`
+`pip install chaostoolkit`
 4. Type chaos --versiob to make sure everything is allright.
 
 ###### How do I run the experiment which invalidates steady state hypothesis?
