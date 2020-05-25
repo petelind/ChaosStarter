@@ -1,0 +1,37 @@
+{
+    "title": "Does our service tolerate the loss of its exchange file?",
+    "description": "Our service reads data from an exchange file - so what will happen if the file disappears?",
+    "tags": [
+        "tutorial",
+        "filesystem"
+    ],
+    "steady-state-hypothesis": {
+        "title": "System is either serving the timestamp or tells that service is unavailable",
+        "probes": [
+            {
+                "type": "probe",
+                "name": "service-is-unavailable",
+                "tolerance": [200, 503],
+                "provider": {
+                    "type": "http",
+                    "url": "http://localhost:80/"
+                }
+            }
+        ]
+    },
+    "method": [
+        {
+            "name": "move-exchange-file",
+            "type": "action",
+            "provider": {
+                "type": "python",
+                "module": "os",
+                "func": "rename",
+                "arguments": {
+                    "src": "./exchange.dat",
+                    "dst": "./exchange.dat.old"
+                }
+            }
+        }
+    ]
+}
