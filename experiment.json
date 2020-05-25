@@ -10,7 +10,7 @@
         "probes": [
             {
                 "type": "probe",
-                "name": "service-is-unavailable",
+                "name": "service-is-available-or-unvailability-stated",
                 "tolerance": [200, 503],
                 "provider": {
                     "type": "http",
