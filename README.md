@@ -7,7 +7,7 @@
 `source ~/.venvs/chaostk/activate`
 3. Install Chaos Toolkit:
 `pip install chaostoolkit`
-4. Type chaos --versiob to make sure everything is allright.
+4. Type chaos --version to make sure everything is allright.
 
 ### How do I run the experiment which invalidates steady state hypothesis?
 1. Start the service:
