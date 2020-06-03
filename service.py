@@ -26,14 +26,6 @@ def simple_app(environ, start_response):
     """
     Read the content of the exchange file and return it.
     """
-    if not os.path.exists(EXCHANGE_FILE):
-        logging.error("Exchange file missing or corrupted!")
-        start_response(
-            '503 Service Unavailable',
-            [('Content-type', 'text/plain')]
-        )
-        return [b'Exchange file is corrupted or missing!']
-
 
     start_response('200 OK', [('Content-type', 'text/plain')])
     with io.open(EXCHANGE_FILE) as f:
